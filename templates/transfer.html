@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Product transfer</title>
+{% endblock %}
+</head>
+<body>
+{% block content %}
+    <h1> Transfer your products. </h1>
+    <h3>Make Sure:</h3>
+    <ul class="align_mid">
+    <li>Product is owned by you. Code is correct</li>
+    <li>The customer also have account</li>
+    </ul>
+    <div class="align_mid">
+<form method="POST">{% csrf_token %}
+    <input type =number name="price" placeholder="price"><br>
+    <input type="text"  name="id" placeholder="id"><br>
+    <input type="text"  name="customer" placeholder="customer"><br>
+    <input type="password"  name="password" placeholder="password"><br><br>
+
+
+    <input type="submit" class="button">
+    <br>
+    <br>
+</form>
+    </div>
+{% endblock %}
+

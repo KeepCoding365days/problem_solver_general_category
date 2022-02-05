@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Check</title>
+{% endblock %}
+{% block content %}
+    <h2>Enter Product code to check its Origin.</h2>
+    <div class="align_mid">
+<form method="POST">{% csrf_token %}
+
+    <input type="text" name="code" placeholder="product_code"><br><br>
+
+    <input type="submit" class="button"><br><br>
+</form>
+    </div>
+{% endblock %}

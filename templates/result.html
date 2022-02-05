@@ -1,0 +1,17 @@
+{% extends  "base.html" %}
+{% block title %}
+    <title>Check Originality!</title>
+{% endblock %}
+{% block content %}
+<h2>Origin of Product is:{{ prod.origin }}</h2>
+    <h2>History of Transactions</h2>
+    <div class="align_mid">
+<ol>
+    {% for i in data %}
+        <li class="align_mid"><b>Buyer:</b>{{ i.buyer }}<br> <b>Sender:</b>{{ i.seller }}<br>  <b>Price:</b>{{ i.price }}<br><br><br></li>
+    {% empty %}
+        <h2>No transactions yet. </h2>
+    {% endfor %}
+</ol>
+    </div>
+{% endblock %}

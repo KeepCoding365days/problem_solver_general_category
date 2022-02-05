@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Product upload</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Upload Your Products.</h1>
+    <h3>After uploading you can transfer to others. Your users can validate originality of your Product.</h3>
+<div class="align_mid">
+    <form method="POST">{% csrf_token %}
+    <input type="text"  name="name" placeholder="Product Name"><br>
+    <input type="text"  name="category" placeholder="Product category"><br>
+    <input type="number"  name="price" placeholder="Product price"><br>
+    <input type="text"  name="code" placeholder="Product code"><br>
+    <input type="text"  name="origin" placeholder="Product origin"><br>
+    <br>
+    <input type="checkbox" id="sale" name="sale" value="sale" checked>
+    <label for="sale">For Sale</label><br>
+
+    <input type="submit" class="button">
+</form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{%  block title %}
+    <title>Register Yourself</title>
+{% endblock %}
+<body>
+{% block content %}
+    <h1>Register yourself to start selling and Buying.</h1>
+    <h3>After registering here, Log in</h3>
+    <div class="align_mid">
+<form method="POST">{% csrf_token %}
+    <input type="text"  name="name" placeholder="your name"><br>
+    <input type="text"  name="company_name" placeholder="company_name"><br>
+    <input type="password" name="password" placeholder="password"><br>
+
+
+    <input type="submit" class="button">
+</form>
+    </div>
+{% endblock %}
+</body>
+</html>

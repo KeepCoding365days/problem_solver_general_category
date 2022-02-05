@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Hi {{ user.username }}!</h1>
+{% else %}
+  <p>You are not logged in</p>
+
+{% endif %}
+     <h1>Let's Fight against Fake Products!</h1>
+
+    <h1> UPLOAD, SELL & CHECK. Your one window solution </h1>
+    <div class="align_mid">
+     <a  href="upload" class="align_mid">
+                <button class= "button">
+                    Upload
+                </button>
+     </a>
+    </div>
+    <br>
+    <div class="align_mid">
+     <a  href="transfer" class="align_mid">
+                <button class= "button ">
+                    Transfer
+
+                </button>
+     </a>
+    </div>
+    <br>
+    <div class="align_mid">
+     <a  href="check" class="align_mid">
+                <button class= "button ">
+                    Check origin of your Product
+
+                </button>
+     </a>
+    </div>
+    <br>
+    <br>
+    <h1>Your Products</h1>
+    <div  class="align_mid">
+    <ol>
+        {% for n in data %}
+        <li><b>Product Code:</b>{{ n.code }}</li><br> <b>Product Name:</b>{{ n.name }}<br><br>
+            {% empty %}
+            <h3>You own no product. Either upload or request from other users.</h3>
+        {% endfor %}
+    </ol>
+    </div>
+{% endblock %}
+</body>
+</html>
