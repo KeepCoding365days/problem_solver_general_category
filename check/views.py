@@ -11,9 +11,13 @@ def check(request):
         for n in lis:
             if n.code==id:
                 context={"prod":n,"data":a}
-                return render(request,"result.html",context)
+                found=True
+                break
             else:
-
-                return render(request,"failed.html",context)
+                found=False
+        if found:
+            return render(request,"result.html",context)
+        else:
+            return render(request,"failed.html",{})
 
     return render(request,"check.html",{})
