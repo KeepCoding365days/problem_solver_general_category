@@ -1,0 +1,1 @@
+web: gunicorn punjab-steel-mill-management.wsgi --log-file -
